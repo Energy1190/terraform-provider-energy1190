@@ -18,8 +18,9 @@ jobs:
   goreleaser:
     runs-on: ubuntu-latest
     steps:
+      - name: Set
+        run: | 
+          echo "TIMESTAMP=$(date +%Y%m%d)" >> "$GITHUB_ENV"
       - name: Test
-        env:
-          TIMESTAMP: $(date +%Y%m%d)
         run: |
           echo "${TIMESTAMP}"
